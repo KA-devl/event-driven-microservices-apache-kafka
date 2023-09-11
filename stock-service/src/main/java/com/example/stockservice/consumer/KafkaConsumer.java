@@ -8,10 +8,9 @@ import org.springframework.kafka.annotation.KafkaListener;
 public class KafkaConsumer {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(KafkaConsumer.class);
-    @KafkaListener(topics = "${spring.kafka.topic.name}", groupId = "stock-group")
+    @KafkaListener(topics = "${spring.kafka.topic.name}", groupId = "${spring.kafka.consumer.group-id}")
     public void listen(OrderEventDto orderEventDto) {
-
-        LOGGER.info("Consuming order event {}", orderEventDto);
+        LOGGER.info("Consuming order event {}", orderEventDto.toString());
     }
 
 }
