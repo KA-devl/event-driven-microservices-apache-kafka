@@ -7,7 +7,6 @@ import lombok.RequiredArgsConstructor;
 
 @Data
 @AllArgsConstructor
-@RequiredArgsConstructor
 public class OrderEventDto {
     private String message;
     private String status;
